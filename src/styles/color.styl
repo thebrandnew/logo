@@ -1,0 +1,142 @@
+// Gray -- normal content & background
+$gray-0 = #252627
+$gray-1 = #45484A
+$gray-2 = #66696C
+$gray-3 = #84888A
+$gray-4 = #9FA4A6
+$gray-5 = #B8BDBE
+$gray-6 = #CDD3D3
+$gray-7 = #DEE3E3
+$gray-8 = #EBEFEF
+$gray-9 = #F3F6F6
+
+// Blue -- primary content & backgrond
+$blue-0 = #091532
+$blue-1 = #102952
+$blue-2 = #204571
+$blue-3 = #3B698F
+$blue-4 = #618FA9
+$blue-5 = #85B1C2
+$blue-6 = #A1CCD6
+$blue-7 = #BCE3E7
+$blue-8 = #D1F3F4
+$blue-9 = #E1FEFC
+
+// Green -- succeed content & background
+$green-0 = #07331F
+$green-1 = #106133
+$green-2 = #1D873F
+$green-3 = #32A349
+$green-4 = #4CB756
+$green-5 = #6DC96A
+$green-6 = #96DA8A
+$green-7 = #B6E8A4
+$green-8 = #CFF5B9
+$green-9 = #E2FFC6
+
+// Red -- danger content & background
+$red-0 = #340707
+$red-1 = #5E130F
+$red-2 = #83291D
+$red-3 = #A54A36
+$red-4 = #C1725A
+$red-5 = #D59A81
+$red-6 = #E3B79F
+$red-7 = #EECDB7
+$red-8 = #F7DEC9
+$red-9 = #FFECD6
+
+// Yellow -- caution content & background
+$yellow-0 = #341D04
+$yellow-1 = #5F3C0B
+$yellow-2 = #866019
+$yellow-3 = #A2802E
+$yellow-4 = #BAA04A
+$yellow-5 = #CFBD68
+$yellow-6 = #E0D78A
+$yellow-7 = #EEEBA8
+$yellow-8 = #F6F7C0
+$yellow-9 = #FBFFD6
+
+// Scene Classes
+
+// background
+.b-0
+  background var(--clr-b-0)
+.b-1
+  background var(--clr-b-0)
+.b-2
+  background var(--clr-b-0)
+// content
+.c-0
+  color var(--clr-c-0)
+.c-1
+  color var(--clr-c-1)
+.c-2
+  color var(--clr-c-2)
+
+// scene -- normal
+.clr-normal
+  // background
+  --clr-b-0: white
+  --clr-b-1: $gray-9
+  --clr-b-2: $gray-8
+  // content
+  --clr-c-0: $gray-9
+  --clr-c-1: $gray-7
+  --clr-c-2: $gray-5
+
+// scene -- reverse
+.clr-reverse
+  // background
+  --clr-b-0: black
+  --clr-b-1: $gray-0
+  --clr-b-2: $gray-1
+  // content
+  --clr-c-0: white
+  --clr-c-1: $gray-8
+  --clr-c-2: $gray-6
+
+// scene -- primary
+.clr-primary
+  // background
+  --clr-b-0: $blue-9
+  --clr-b-1: $blue-8
+  --clr-b-2: $blue-7
+  // content
+  --clr-c-0: $blue-0
+  --clr-c-1: $blue-2
+  --clr-c-2: $blue-4
+
+// scene -- succeed
+.clr-succeed
+  // background
+  --clr-b-0: $green-9
+  --clr-b-1: $green-8
+  --clr-b-2: $green-7
+  // content
+  --clr-c-0: $green-0
+  --clr-c-1: $green-2
+  --clr-c-2: $green-4
+
+// scene -- danger
+.clr-danger
+  // background
+  --clr-b-0: $red-9
+  --clr-b-1: $red-8
+  --clr-b-2: $red-7
+  // content
+  --clr-c-0: $red-0
+  --clr-c-1: $red-2
+  --clr-c-2: $red-4
+
+// scene -- caution
+.clr-caution
+  // background
+  --clr-b-0: $yellow-9
+  --clr-b-1: $yellow-8
+  --clr-b-2: $yellow-7
+  // content
+  --clr-c-0: $yellow-0
+  --clr-c-1: $yellow-2
+  --clr-c-2: $yellow-4
