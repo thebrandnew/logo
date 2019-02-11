@@ -42,6 +42,14 @@ module.exports = {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
+        test:/\.pug$/,
+        loader: "pug-html-loader"
+      },
+      {
+        test:/\.css$/,
+        loader:'style-loader!css-loader!stylus-loader'
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
