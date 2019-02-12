@@ -48,7 +48,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         }
       }
     }
-  }
+  },
 
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
