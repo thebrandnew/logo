@@ -1,19 +1,21 @@
 <template lang="pug">
-div.register
-  div
-    input.tel(
-      type="text"
-      placeholder="请填写手机号码"
-      v-model="tel"
-    )
-    button(
-      @click="send(tel)"
-    ) 点击发送短信
-
-  input.number(
-    type="text"
+.register
+  input(
+    type="number"
+    placeholder="请填写手机号码"
+    v-model="tel"
+  )
+  button(
+    @click="send(tel)"
+  ) 点击发送短信
+  input(
+    type="number"
     placeholder="请填写短信验证码"
     v-model="number"
+  )
+  input(
+    type="submit"
+    value="提交"
   )
 </template>
 
@@ -40,30 +42,4 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.register
-  height: 100vh
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-direction: column
-  input
-    width: 300px
-    height: 50px
-    outline: none
-    border: none
-    border-radius: 5px
-    padding-left: 20px
-    font-size: 18px
-  div
-    margin-bottom: 20px
-    position: relative
-    button
-      position: absolute
-      right: 10px
-      top: 10px
-      width: 100px
-      height: 30px
-      outline: none
-      border: 1px solid #eee
-      border-radius: 50px
 </style>
