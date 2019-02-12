@@ -11,8 +11,9 @@ export default {
 
 <style lang="stylus">
 
-@import '~@/styles/_index'
-  
+@import '~@/styles/style/_index'
+@require '~@/styles/layout/_index'
+
 #app
   width 100%
   height 100%
