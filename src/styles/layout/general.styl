@@ -1,0 +1,27 @@
+// 预定义好的 class，开发者不能使用这个名字
+.group
+  display inline-grid
+  place-content stretch
+  place-item stretch
+
+.b-debug
+  background alpha(red, 10%)
+  box-shadow inset 0 0 0 -1px red
+  &-layout //显示 item 边界
+    & > *
+      background alpha(red, 10%)
+      box-shadow inset 0 0 0 -1px red
+  &-all //显示所有子孙边界
+    *
+      background alpha(red, 10%)
+      box-shadow inset 0 0 0 -1px red
+
+unset-size(d)
+  {d} unset
+  min-{d} unset
+  max-{d} unset
+
+.abs
+  position absolute
+.sticky
+  position sticky
