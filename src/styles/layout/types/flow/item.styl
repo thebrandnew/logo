@@ -1,0 +1,36 @@
+// TODO
+
+/*
+align: start || center || end || stretch (定义交叉轴方向尺寸
+*/
+
+pos-flow(parent_dir, align, w, h)
+
+  // 定义元素在交叉轴方向的尺寸（和 stack 完全一样）
+  if align == 'start'
+    align-self flex-start
+    if parent_dir == 'x'
+      height h
+    else if parent_dir == 'y'
+      width w
+
+  else if align == 'end'
+    align-self flex-end
+    if parent_dir == 'x'
+      height h
+    else if parent_dir == 'y'
+      width w
+
+  else if align == 'center'
+    align-self center
+    if parent_dir == 'x'
+      height h
+    else if parent_dir == 'y'
+      width w
+
+  else if align == 'stretch'
+    align-self stretch
+    if parent_dir == 'x'
+      unset-size(height)
+    else if parent_dir == 'y'
+      unset-size(width)

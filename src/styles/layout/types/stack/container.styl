@@ -1,0 +1,62 @@
+/*
+dir: x || y
+gap: Length
+ali: start || center || end || stretch
+arr: start || center || end || stretch || space-between
+*/
+
+stack(dir=x, gap=0, ali=stretch, arr=start)
+  // 初始化布局样式
+  display inline-flex
+  align-items stretch
+  flex-wrap nowrap
+  &>*:not(.abs):not(.sticky)
+    position relative
+    // flex 1 1 auto
+    // &>*
+    //   position relative
+
+  // 定义元素排列方向  
+  if dir == 'x'
+    flex-direction row
+  else if dir == 'y'
+    flex-direction column
+
+  // 定义元素间距
+  &>*:not(:first-child):not(.abs)
+    if arr != 'between'
+      if dir == 'x'
+        margin-left gap
+      else if dir == 'y'
+        margin-top gap
+
+  // 定义元素排列方式
+  // 容器样式
+  if arr == 'start'
+    justify-content flex-start
+  else if arr == 'end'
+    justify-content flex-end
+  else if arr == 'center'
+    justify-content center
+  else if arr == 'space-between'
+    justify-content space-between
+  else if arr == 'stretch'
+    justify-content space-between
+  // 子元素样式
+  &>*
+    if arr != 'stretch'
+      flex 0 0 auto
+    else
+      flex 1 1 auto
+
+  // 定义元素对齐方式
+  if ali == 'start'
+    align-items flex-start
+  else if ali == 'end'
+    align-items flex-end
+  else if ali == 'center'
+    align-items center
+  else if ali == 'stretch'
+    align-items stretch
+  &>.flex
+    flex 1 1 auto

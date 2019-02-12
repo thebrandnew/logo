@@ -1,0 +1,29 @@
+/*
+count: Int
+size: Length
+arr: start || center ||| end || stretch || space-between
+gap: Length
+*/
+
+grid(x-count=2, y-count=1, x-size='auto', y-size='auto', x-arr='start', y-arr='start', x-gap=0, y-gap=0)
+  // init
+  display inline-grid
+  &>*:not(.abs):not(.sticky)
+    position relative
+  if x-arr == stretch
+    $cellWidth = 1fr
+  else 
+    $cellWidth = x-size
+  if y-arr == stretch
+    $cellHeight = 1fr
+  else 
+    $cellHeight = x-size
+  // arrange
+  justify-content x-arr
+  align-content y-arr
+  // size
+  grid-template-columns repeat(x-count, $cellWidth)
+  grid-template-rows repeat(y-count, $cellHeight)
+  // gap
+  grid-column-gap x-gap
+  grid-row-gap y-gap

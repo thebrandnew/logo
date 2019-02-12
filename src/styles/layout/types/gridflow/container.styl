@@ -1,0 +1,14 @@
+/*
+gapx: Length
+gapy: Length
+min: Length 换行时机
+*/
+
+gridflow(gap=0, colmin=12rem)
+  display inline-grid
+  grid-gap gap
+  grid-template-columns repeat(auto-fill, minmax(colmin, 1fr))
+  grid-auto-rows 1fr
+  &>*
+    unset-size(width)
+    unset-size(height)

@@ -1,0 +1,61 @@
+// TODO
+
+/*
+dir: x || y
+gap_x: Space
+gap_y: Space
+align: start || center || end || stretch (元素互相对齐方式)
+*/
+
+flow(dir=x, gap-x=0, gap-y=0, ali=start)
+  display inline-flex
+  align-items stretch
+  // layout
+  & > *
+    display inline-flex
+    position relative
+    align-content flex-start
+    // flex 1 1 0 // 神秘的属性，会导致编译错误
+
+    // direction
+    if dir == 'x'
+      flex-direction row
+    else if dir == 'y'
+      flex-direction column
+
+    // wrap
+    flex-wrap wrap
+
+    // gap
+    margin-top gap-y * -1
+    margin-left gap-x  * -1
+
+    // arrange
+    // if arr-items == 'start'
+    //   justify-content flex-start
+    // else if arr-items == 'end'
+    //   justify-content flex-end
+    // else if arr-items == 'center'
+    //   justify-content center
+    // else if arr-items == 'between'
+    //   justify-content space-between
+
+    // align items
+    if ali == 'start'
+      align-items flex-start
+    else if ali == 'end'
+      align-items flex-end
+    else if ali == 'center'
+      align-items center
+    else if ali == 'stretch'
+      align-items stretch
+
+  // items
+  & > * > *
+    position relative
+    // gap
+    margin-left gap-x
+    margin-top gap-y
+
+    // grow
+    flex 0 0 auto
