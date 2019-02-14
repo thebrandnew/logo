@@ -3,11 +3,11 @@
   keep-alive
     router-view
   button(
-    v-if="this.$route.path !== '/initialize/inquire'"
+    v-if="this.$route.path !== '/'"
     @click="goPrev"
   ) 上一个
   button(
-    v-if="this.$route.path !== '/initialize/result'"
+    v-if="this.$route.path !== '/result'"
     @click="goNext"
   ) 下一个
 </template>
@@ -26,18 +26,16 @@ export default {
     3 result 展示想要购买的页面
     */
     goPrev: function () {
-      let show = /show/gi
-      if (show.test(this.$route.path)) {
-        this.$router.push({ path: 'inquire' })
+      if (this.$route.path === '/show') {
+        this.$router.push({ path: '/' })
       } else {
         this.$router.push({ path: 'show' })
       }
     },
     goNext: function () {
-      let inquire = /inquire/gi
-      if (inquire.test(this.$route.path)) {
+      if (this.$route.path === '/') {
         this.$router.push({ path: 'show' })
-      } else {
+      } else if (this.$route.path === '/show') {
         this.$router.push({ path: 'result' })
       }
     }

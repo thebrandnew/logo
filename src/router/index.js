@@ -12,21 +12,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/demo',
-      name: 'Demo',
-      component: Demo
-    },
-    {
       path: '/',
-      name: 'Register',
-      component: Register
-    },
-    {
-      path: '/initialize',
       component: Initialize,
       children: [
         {
-          path: 'inquire',
+          path: '/',
           component: Inquire,
           meta: {
             keepAlive: true
@@ -44,6 +34,16 @@ export default new Router({
           component: Result
         }
       ]
+    },
+    {
+      path: '/demo',
+      name: 'Demo',
+      component: Demo
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })
