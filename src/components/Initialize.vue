@@ -1,5 +1,12 @@
 <template lang="pug">
 .initialize
+  .head
+    .t-2 My brand new logo
+    .t-1 A Pprofessional design for everyone
+  .steps
+    .p-0 step 1
+    .p-0 step 2
+    .p-0 step 3
   keep-alive
     router-view
   button(
@@ -44,4 +51,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@require '~@/styles/layout/_index'
+.head
+  stack(y, gap: var(--length-s))
+
+.steps
+  stack(x, gap: var(--length-m))
 </style>
