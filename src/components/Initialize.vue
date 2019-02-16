@@ -5,9 +5,18 @@
       .t-2 My brand new logo
       .t-1 A professional design for everyone
     .stack-x-m
-      .step.current 1 输入名称
-      .step 2 挑选 logo
-      .step 3 下载 logo
+      div(
+        class="step"
+        :class="inputName"
+      ) 1 输入名称
+      div(
+        class="step"
+        :class="chooseLogo"
+      ) 2 挑选 logo
+      div(
+        class="step"
+        :class="download"
+      ) 3 下载 logo
     keep-alive
       router-view
     .btns
@@ -25,7 +34,26 @@
 export default {
   name: 'Initialize',
   data () {
-    return {}
+    return {
+      isCurrent: this.$route.path
+    }
+  },
+  computed: {
+    inputName: function () {
+      return {
+        current: this.$route.path === '/'
+      }
+    },
+    chooseLogo: function () {
+      return {
+        current: this.$route.path === '/show'
+      }
+    },
+    download: function () {
+      return {
+        current: this.$route.path === '/result'
+      }
+    }
   },
   methods: {
     /*
