@@ -1,15 +1,24 @@
 <template lang="pug">
 .initialize
-  keep-alive
-    router-view
-  button(
-    v-if="this.$route.path !== '/'"
-    @click="goPrev"
-  ) 上一个
-  button(
-    v-if="this.$route.path !== '/result'"
-    @click="goNext"
-  ) 下一个
+  .stack-y-l
+    .stack-y-m
+      .t-2 My brand new logo
+      .t-1 A professional design for everyone
+    .stack-x-m
+      .step.current 1 输入名称
+      .step 2 挑选 logo
+      .step 3 下载 logo
+    keep-alive
+      router-view
+    .btns
+      button(
+        v-if="this.$route.path !== '/'"
+        @click="goPrev"
+      ) 上一个
+      button(
+        v-if="this.$route.path !== '/result'"
+        @click="goNext"
+      ) 下一个
 </template>
 
 <script>
@@ -44,4 +53,15 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@require '~@/styles/layout/_index'
+.stack-y-l
+  stack(y, gap: var(--length-l))
+.stack-y-m
+  stack(y, gap: var(--length-s))
+.stack-x-m
+  stack(x, gap: var(--length-m))
+
+.step
+  &.current
+    color red
 </style>
