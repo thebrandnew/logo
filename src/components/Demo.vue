@@ -13,7 +13,7 @@ export default {
   name: 'Demo',
   data () {
     return {
-      layout: "x"
+      layout: 'x'
     }
   }
 }
@@ -42,8 +42,5 @@ export default {
   stack(x, gap: 16px, ali: center)
 .y
   stack(y, gap: 4px)
-
-
-
 
 </style>

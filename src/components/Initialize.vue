@@ -1,5 +1,8 @@
 <template lang="pug">
 .initialize
+  .login(
+    @click="login"
+  ) 登录
   .stack-y-l
     .stack-y-m
       .t-2 My brand new logo
@@ -75,6 +78,9 @@ export default {
       } else if (this.$route.path === '/show') {
         this.$router.push({ path: 'result' })
       }
+    },
+    login: function () {
+      this.$router.push({ path: 'Register' })
     }
   }
 }
@@ -84,6 +90,11 @@ export default {
 @require '~@/styles/layout/_index'
 .stack-y-l
   stack(y, gap: var(--length-l))
+.login
+  position absolute
+  right 20px
+  top 20px
+  cursor pointer
 .stack-y-m
   stack(y, gap: var(--length-s))
 .stack-x-m

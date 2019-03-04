@@ -3,7 +3,8 @@
   .gridflow
     img(
       v-lazy="item"
-      v-for="item in list"
+      v-for="(item, index) in list"
+      @click="showDetail(index)"
     )
     //- .result.shadow-m.radius-m result 1
     //- .result.shadow-m.radius-m result 2
@@ -51,6 +52,22 @@ export default {
         '../../static/images/example.jpg'
       ]
     }
+  },
+  methods: {
+    showDetail: function (index) {
+      this.$router.push({
+        path: '/result',
+        query: {
+          id: index
+        }
+      })
+    }
+  },
+  mounted () {
+    this.axios
+      .get('../logo/make')
+      .then(response => (console.log(response.data)))
+      // 返回logos的list
   }
 }
 </script>

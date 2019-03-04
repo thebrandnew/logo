@@ -35,6 +35,9 @@ export default {
         console.log('弹窗提示')
       } else {
         console.log(tel)
+        // this.axios
+        //   .get('../logo/make')
+        //   .then(response => (console.log(response.data)))
       }
     }
   }
