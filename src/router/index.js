@@ -6,6 +6,7 @@ import Inquire from '@/components/Inquire'
 import Initialize from '@/components/Initialize'
 import Show from '@/components/Show'
 import Result from '@/components/Result'
+import Mine from '@/components/Mine'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: Mine
     }
   ]
 })

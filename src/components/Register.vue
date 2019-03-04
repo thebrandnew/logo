@@ -30,11 +30,11 @@ export default {
     }
   },
   methods: {
-    send: (tel) => {
+    send: function (tel) {
       if (tel.length !== 11) {
         console.log('弹窗提示')
       } else {
-        console.log(tel)
+        this.$router.push({ path: 'Mine' })
         // this.axios
         //   .get('../logo/make')
         //   .then(response => (console.log(response.data)))

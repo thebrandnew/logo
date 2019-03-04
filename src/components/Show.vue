@@ -64,10 +64,10 @@ export default {
     }
   },
   mounted () {
-    this.axios
-      .get('../logo/make')
-      .then(response => (console.log(response.data)))
-      // 返回logos的list
+    // this.axios
+    //   .get('../logo/make')
+    //   .then(response => (console.log(response.data)))
+    // 返回logos的list
   }
 }
 </script>

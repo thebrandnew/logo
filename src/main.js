@@ -7,7 +7,9 @@ import App from './App'
 import router from './router'
 import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueAxios, axios, VueLazyload)
+Vue.use(VueAxios, axios)
+
+Vue.use(VueLazyload)
 
 Vue.config.productionTip = false
 
